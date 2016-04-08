@@ -5,7 +5,6 @@ class CreateMovies < ActiveRecord::Migration
       t.string :story
 
       t.timestamps null: false
-      t.index [:user_id, :created_at]
     end
   end
 end
