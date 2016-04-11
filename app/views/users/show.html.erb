@@ -1,14 +1,20 @@
 
 <div class="row gutter-20">
     <div class="col-sm-12 profile-body">
-      <div class="profile-img"><%= link_to gravatar_for(@user,size:200),@user, class:'profile-image' %></div>
-      <h1><%= @user.name %></h1></br>
-      
-       <%= @user.profile %>
-        <%= render 'follow_form' if logged_in? %>
+        <div class="wrapper-profile row">
+            
+            <div class="profile-name col-sm-4">
+                <%= link_to gravatar_for(@user,size:200),@user, class:'profile-image' %>
+                <h1><%= @user.name %></h1>
+                <span><%= render 'follow_form' if logged_in? %></span>
+            </div>
                 
-                
-               
+            <div class="profile-text col-sm-8">
+                <p><%= @user.profile %></p>
+            </div>
+            
+        </div>
+        <div class="tri"><span></span></div>
                
                 <h2>この人が書いた映画・アニメのレビュー</h2>
                 <p><%= render @reviews %></p>
