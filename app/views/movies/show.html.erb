@@ -1,21 +1,36 @@
 <div class="row">
     <div class="col-sm-12 movie-page">
+        
         <h2 class="movie-title col-sm-12"><%= @movie.title %></h2>
         
         <div class="movie-img col-sm-4">
+            
             <% if @movie.image? %>
                 <%= image_tag @movie.image.url, :size => '220x310' %>
             <% end %>
+            
         </div><!--movie-img-->
         
         <div class="movie-text col-sm-8">
+            
+            <div class="gen">
+            <h2 class="gen-title">ジャンル</h2>
+            <div class="gen-tri"></div>
+            <a>アクション</a><!--後にrubyで編集-->
+        </div><!--gen-->
+            
             <span class="movie-tag">
-                <i class="fa fa-tags" aria-hidden="true"> タグ一覧</i><a>2014年</a><a>戦争映画</a><a>ドイツ</a><a>ヒトラー</a>
+                <i class="fa fa-tags" aria-hidden="true"> タグ一覧</i>
+                <a>2014年</a><a>戦争映画</a><a>第二次世界大戦</a><a>ドイツ</a><a>ヒトラー</a><!--後にrubyで編集-->
             </span>
             
             <h3>レビュワー評価</h3>
             <ul>
-                <li>映像：★★★★★</li><li>キャスト：★★★★☆</li><li>音楽：★★☆☆☆</li><li>演出：★★★★★</li><li>物語：★★★★★</li>
+                <li>映像：★★★★★</li><!--後にrubyで編集-->
+                <li>キャスト：★★★★☆</li><!--後にrubyで編集-->
+                <li>音楽：★★☆☆☆</li><!--後にrubyで編集-->
+                <li>演出：★★★★★</li><!--後にrubyで編集-->
+                <li>物語：★★★★★</li><!--後にrubyで編集-->
             </ul>
             
             <h3>あらすじ</h3>
