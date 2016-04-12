@@ -1,35 +1,36 @@
 <div class="row">
-    <div class="col-sm-3">
-        <div class="movie-image">
-            
+    <div class="col-sm-12 movie-page">
+        <h2 class="movie-title col-sm-12"><%= @movie.title %></h2>
+        
+        <div class="movie-img col-sm-4">
             <% if @movie.image? %>
                 <%= image_tag @movie.image.url, :size => '220x310' %>
             <% end %>
+        </div><!--movie-img-->
+        
+        <div class="movie-text col-sm-8">
+            <span class="movie-tag">
+                <i class="fa fa-tags" aria-hidden="true"> タグ一覧</i><a>2014年</a><a>戦争映画</a><a>ドイツ</a><a>ヒトラー</a>
+            </span>
             
+            <h3>レビュワー評価</h3>
+            <ul>
+                <li>映像：★★★★★</li><li>キャスト：★★★★☆</li><li>音楽：★★☆☆☆</li><li>演出：★★★★★</li><li>物語：★★★★★</li>
+            </ul>
+            
+            <h3>あらすじ</h3>
+            <p><%= @movie.story %></p>
+        </div><!--movie-text-->
+        
+        <div class="movie-info col-sm-12">
+            
+            <h2>この作品のレビューを見る</h2>
+            <p>レビュー１</p>
+            
+            <h2>この作品のスレッド</h2>
+            <p>レビュー１</p>
         </div>
-        <p>
-            <%= link_to "削除", @movie, method: :delete, data: { confirm: '削除してよろしいですか？' } %> 
-            </p>
-            レビューを見る</br>
-            スレッドを見る
         
     </div>
-    <div class="col-sm-9 movie-body">
-    <h2 class="movie-title"><%= @movie.title %></h2>
-    <p>泣ける　笑える　スペクタクル</p>
-    
-    <h2>レビュワーからの総合評価</h2>
-    <p>映像：★★★★★　キャスト：★★★★★　音楽：★★★★★　演出：★★★★★　物語：★★★★★</p>
-    <h2>あらすじ</h2>
-    <p><%= @movie.story %></p>
-
-    <h2>この作品のレビューを見る</h2>
-    <p>レビュー１</p>
-    
-    <h2>この作品のスレッド</h2>
-    <p>レビュー１</p>
-    
-    </div>
-    
-    
+    <%= link_to "削除", @movie, method: :delete, data: { confirm: '削除してよろしいですか？' } %> 
 </div>

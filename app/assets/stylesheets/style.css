@@ -57,14 +57,129 @@ form > .btn{
 }
 
 #follow_form{
-  width: auto;
-  font-size: 20px;
-  left: 0;
+	width: auto;
+	font-size: 20px;
+	left: 0;
 }
 
 .tri{
-	display: none;
+	display: block;
+	width: 100%;
+	height: 20px;
+	background: none;
 }
+
+.tri span{
+	display: block;
+	width: 100px;
+	height: 20px;
+	margin: 0 auto;
+	border-top: solid 20px #e6e6fa;
+	border-left: solid 50px rgba(0,0,0,0);
+	border-right: solid 50px rgba(0,0,0,0);
+}
+
+.profile-body h2{
+	font-size: 14px;
+	color: #2b2b2b;
+	text-indent: 0;
+}
+
+.movie-page h2{
+	font-size: 25px;
+	text-align: left;
+	color: #2f4f4f;
+	text-indent: 1em;
+	border-left: solid 10px #20b2aa;
+	border-bottom: solid 1px #cdcdcd;
+}
+
+.movie-img img{
+	display: block;
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+	box-shadow: 0px 0px 10px #cdcdcd;
+}
+
+.movie-text h3{
+	font-size: 18px;
+	border-left: solid 3px #20b2aa;
+	border-bottom: solid 1px #cdcdcd;
+	text-indent: 1em;
+	line-height: 2em;
+}
+
+.movie-text ul{
+	padding: 0;
+	width: 100%;
+	height: auto;
+}
+
+.movie-text ul li{
+	display: inline-block;
+	font-size: 13px;
+	margin: 0 1em 0.5em 0;
+}
+
+.movie-text p{
+	font-size: 17px;
+	line-height: 1.8em;
+	padding: 1em;
+	margin: 10px 0 0 0;
+}
+
+.movie-text p:first-letter{
+	font-size: 2em;
+}
+
+.movie-tag{
+	display: block;
+}
+
+.movie-tag i{
+	font-size: 18px;
+	margin-right: 1em;
+	background: #20b2aa;
+	color: #f5f5f5;
+	padding: 6px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.movie-tag a{
+	display: inline-block;
+	color: #cd5c5c;
+	font-size: 17px;
+	padding: 3px 6px;
+	margin-right: 0.7em;
+	margin-bottom: 0.5em;
+	border-radius: 4px;
+	border: solid 1px #cd5c5c;
+	transition: all 0.2s ease-in-out;
+}
+
+.movie-tag a:hover{
+	text-decoration: none;
+	cursor: pointer;
+	background: #cd5c5c;
+	color: #f5f5f5;
+}
+
+
+.movie-info{
+	padding: 10px 20px;
+}
+
+.movie-info h2{
+	font-size: 23px;
+	line-height: 1.8em;
+	text-indent: 0.5em;
+	text-align: left;
+}
+
+
+
 
 @media (max-width:768px){
 	
@@ -94,11 +209,37 @@ form > .btn{
 		border-right: solid 50px rgba(0,0,0,0);
 	}
 	
+	.movie-page h2{
+		font-size: 20px;
+		text-indent: 0em;
+		border-left: solid 6px #20b2aa;
+	}
+	
+	.movie-img img{
+		width: 40%;
+	}
+	
 	.profile-body h2{
 		font-size: 14px;
 		color: #2b2b2b;
 		text-indent: 0;
 	}
+	
+	.movie-tag{
+		margin-top: 30px;
+	}
+	
+	.movie-info h2{
+		font-size: 18px;
+		text-indent: 1em;
+	}
 
+}
+
+
+@media (max-width:450px){
+	.movie-img img{
+		width: 80%;
+	}
 }
 
