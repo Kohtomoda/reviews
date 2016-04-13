@@ -2,18 +2,25 @@ body{
 	font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
 }
 
+
+/*PROFILEPAGEのCSS*/
+.profile-body{
+	background: #e6e6fa;
+}
+
 .profile-body h2{
-	margin-bottom: 0;
-	background: #afeeee;
-	color: #2F4040;
+	margin-bottom: 10px;
+	font-size: 16px;
+	color: #2b2b2b;
 	text-indent: 1em;
+	border-left: solid 5px #4682b4;
+	border-bottom: solid 1px #325d80;
 }
 
 .wrapper-profile{
 	width: 100%;
 	margin: 0 auto;
 	padding-bottom: 10px;
-	background: #e6e6fa;
 	padding: 20px 0;
 }
 
@@ -66,7 +73,6 @@ form > .btn{
 	display: block;
 	width: 100%;
 	height: 20px;
-	background: none;
 }
 
 .tri span{
@@ -79,12 +85,8 @@ form > .btn{
 	border-right: solid 50px rgba(0,0,0,0);
 }
 
-.profile-body h2{
-	font-size: 14px;
-	color: #2b2b2b;
-	text-indent: 0;
-}
 
+/*MOVIEPAGEのCSS*/
 .movie-page h2{
 	font-size: 25px;
 	text-align: left;
@@ -159,13 +161,12 @@ form > .btn{
 
 .movie-text ul{
 	padding: 0;
-	width: 100%;
 	height: auto;
 	float: left;
 }
 
 .movie-text ul li{
-	display: inline-block;
+	display: block;
 	font-size: 13px;
 	margin: 0 1em 0.5em 0;
 }
@@ -236,25 +237,9 @@ form > .btn{
 	width: 90px;
 	}
 	
+	
 	.profile-text p{
-		margin-bottom: 20px;
-	}
-	
-	.tri{
-		display: block;
-		width: 100%;
-		height: 20px;
-		background: #fff;
-	}
-	
-	.tri span{
-		display: block;
-		width: 100px;
-		height: 20px;
-		margin: 0 auto;
-		border-top: solid 20px #e6e6fa;
-		border-left: solid 50px rgba(0,0,0,0);
-		border-right: solid 50px rgba(0,0,0,0);
+		margin: 20px 0;
 	}
 	
 	.movie-page h2{

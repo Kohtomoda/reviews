@@ -25,13 +25,57 @@
             </span>
             
             <h3>レビュワー評価</h3>
-            <ul>
+            <ul class="col-sm-3">
                 <li>映像：★★★★★</li><!--後にrubyで編集-->
                 <li>キャスト：★★★★☆</li><!--後にrubyで編集-->
                 <li>音楽：★★☆☆☆</li><!--後にrubyで編集-->
                 <li>演出：★★★★★</li><!--後にrubyで編集-->
                 <li>物語：★★★★★</li><!--後にrubyで編集-->
             </ul>
+            
+            <div class="wrapper-chart col-sm-3">
+                <canvas id="canvas" width="300px" height="300px"></canvas>
+            </div>
+            <script>
+              $(function() {
+                // チャートの枠組み
+                var radarChartData = {
+                  labels: ["映像", "キャスト", "音楽", "演出", "物語"],
+                  datasets: [
+                    {
+            		// 透明を使いたいのでRGBAで色を再現→rgba(xxx,xxx,xxx,0.5):透過度50%
+            		fillColor: "rgba(244,250,130,0.4)",	// チャート内の色
+            		
+            		strokeColor: "rgba(0,0,0,0.3)",	// チャートを囲む線の色
+                    pointColor: "rgba(0,0,0,0)", 	// チャートの点の色
+                    pointStrokeColor: "rgba(0,0,0,0)",	// 点を囲む線の色
+            		
+            		// 各項目の値
+                    data: [5,4,2,5,5]
+                    }
+                  ]
+                };
+            
+                // Canvas にレーダーチャートを描画
+                var canvas = document.getElementById("canvas");
+                var context = canvas.getContext("2d");
+                var chart = new Chart(context);
+                var rader = chart.Radar(radarChartData, {
+                  scaleShowLabels: true,  // 目盛を表示（true/false）
+                  pointLabelFontSize : 13, // ラベルのフォントサイズ
+            	  
+            	  //メモリの設定
+            	  scaleOverride : true, // メモリの最大値を手動設定（true/false）
+            	  scaleSteps : 5, // メモリの数
+            	  scaleStartValue : 0, // メモリの最初の数
+            	  scaleStepWidth : 1, // メモリの間隔
+            	  // 例：scaleSteps→5　scaleStepWidth→10
+            	  // だと5×2で最大値10
+                });
+            	
+              });
+              
+            </script>
             
             <h3>あらすじ</h3>
             <p><%= @movie.story %></p>
@@ -47,5 +91,6 @@
         </div>
         
     </div>
+    
     <%= link_to "削除", @movie, method: :delete, data: { confirm: '削除してよろしいですか？' } %> 
 </div>
