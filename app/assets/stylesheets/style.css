@@ -178,10 +178,6 @@ form > .btn{
 	margin: 10px 0 0 0;
 }
 
-.movie-text p:first-letter{
-	font-size: 2em;
-}
-
 .movie-tag{
 	display: block;
 }
@@ -215,6 +211,41 @@ form > .btn{
 	color: #f5f5f5;
 }
 
+.movie-point{
+	width: 100%;
+	margin: 30px 0;
+	padding: 0;
+}
+
+.movie-point tr{
+	border-bottom: solid 3px #f5f5f5;
+}
+
+.movie-point th, .movie-point td{
+	font-size: 14px;
+}
+
+.movie-point th{
+	text-align: center;
+	background: #cdcdcd;
+	color: #2b2b2b;
+	font-weight: bold;
+	line-height: 2.5em;
+	letter-spacing: 0.1em;
+}
+
+.movie-point td{
+	text-indent: 1em;
+	background: #f5f5f5;
+	letter-spacing: 0.2em;
+	color: #ffaa00;
+}
+
+.wrapper-chart canvas{
+	display: block;
+	width: 270px;
+	margin: 0 auto;
+}
 
 .movie-info{
 	padding: 10px 20px;
@@ -227,7 +258,31 @@ form > .btn{
 	text-align: left;
 }
 
+.movie-story{
+	padding: 1em;
+	background: #e7e7e7;
+	margin: 20px 0 30px 0;
+	border-radius: 10px;
+}
 
+.movie-story:first-letter{
+	font-size: 2em;
+}
+
+.movie-story cite{
+	display: block;
+	text-align: right;
+	font-size: 13px;
+}
+
+@media (max-width:1199px){
+	
+	.reviewer-point{
+		width: 100%;
+		clear: both;
+		padding-top: 30px;
+	}
+}
 
 
 @media (max-width:768px){
