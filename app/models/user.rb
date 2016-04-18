@@ -22,6 +22,10 @@ class User < ActiveRecord::Base
     
     has_many :movies
     
+    has_many :moviethreads
+    
+
+    
     
     
      # 他のユーザーをフォローする
