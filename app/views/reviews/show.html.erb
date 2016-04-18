@@ -18,8 +18,65 @@
                 <h2>この作品に対する評価をグラフ表示</h2>
                 <p>キャスト・ストーリー・演出・音楽・映像の５項目をレーダーチャートで表示
                 chart.jsを使用すればレーダーチャートで表示することが可能。</p>
+                
+                <div class="wrapper-movie-point col-sm-5">
+                    <table class="movie-point">
+                        <tr><th>キャスト</th><td>★★★★★</td></tr>
+                        <tr><th>映像</th><td>★★★★</td></tr>
+                        <tr><th>音楽</th><td>★★</td></tr>
+                        <tr><th>演出</th><td>★★★★★</td></tr>
+                        <tr><th>物語</th><td>★★★★★</td></tr>
+                    </table>
+                </div>
+            
+            <div class="wrapper-chart col-sm-7">
+                <canvas id="canvas" width="250px" height="250px"></canvas>
+            </div>
+            <script>
+              $(function() {
+                // チャートの枠組み
+                var radarChartData = {
+                  labels: ["キャスト", "映像", "音楽", "演出", "物語"],
+                  datasets: [
+                    {
+            		// 透明を使いたいのでRGBAで色を再現→rgba(xxx,xxx,xxx,0.5):透過度50%
+            		fillColor: "rgba(244,250,130,0.4)",	// チャート内の色
+            		
+            		strokeColor: "rgba(0,0,0,0.3)",	// チャートを囲む線の色
+                    pointColor: "rgba(0,0,0,0)", 	// チャートの点の色
+                    pointStrokeColor: "rgba(0,0,0,0)",	// 点を囲む線の色
+            		
+            		// 各項目の値
+                    data: [5,4,2,5,5]
+                    }
+                  ]
+                };
+            
+                // Canvas にレーダーチャートを描画
+                var canvas = document.getElementById("canvas");
+                var context = canvas.getContext("2d");
+                var chart = new Chart(context);
+                var rader = chart.Radar(radarChartData, {
+                  scaleShowLabels: true,  // 目盛を表示（true/false）
+                  pointLabelFontSize : 13, // ラベルのフォントサイズ
+            	  
+            	  //メモリの設定
+            	  scaleOverride : true, // メモリの最大値を手動設定（true/false）
+            	  scaleSteps : 5, // メモリの数
+            	  scaleStartValue : 0, // メモリの最初の数
+            	  scaleStepWidth : 1, // メモリの間隔
+            	  // 例：scaleSteps→5　scaleStepWidth→10
+            	  // だと5×2で最大値10
+                });
+            	
+              });
+              
+            </script>
+
                 <h2>キャスト一覧</h2>
                 <p></p>
+                
+                
                 
     </div>
 </div>          

@@ -14,33 +14,41 @@
             </div>
             
         </div>
-        <div class="tri"><span></span></div>
+        <!--<div class="tri"><span></span></div>-->
                
-                <h2>この人が書いた映画・アニメのレビュー</h2>
-                <p><%= render @reviews %></p>
-                <h2>この人のスレッドの書き込み</h2>
-                <p>この映画以上に人生について考えさせられる映画はない。</p>
-                <h2>好きな映画・アニメのジャンル</h2>
-                <p>アクション　ホラー　SF</p>
-                <h2>お気に入りの作品</h2>
-                <p></p>
+        <h2>この人が書いた映画・アニメのレビュー</h2>
+        <p><%= render @reviews %></p>
+        <h2>この人のスレッドの書き込み</h2>
+        <p>この映画以上に人生について考えさせられる映画はない。</p>
+        <h2>好きな映画・アニメのジャンル</h2>
+        <p>アクション　ホラー　SF</p>
+        <h2>お気に入りの作品</h2>
+        <p>テキストテキストテキストテキストテキストテキスト</p>
+        
+        <div class="wrapper-follow">
+            <div class="col-sm-6">
                 <h2>フォロー</h2>
                 <p>
-                 <% if @user.following_users.any? %>
-                 <% @user.following_users.each do |user| %>
-                 <%= link_to gravatar_for(user,size:50), user %>
-                 <%= user.name %>
-                 <% end %>
+                <% if @user.following_users.any? %>
+                <% @user.following_users.each do |user| %>
+                <%= link_to gravatar_for(user,size:50), user %>
+                <%= user.name %>
+                <% end %>
                 <% end %>
                 </p>
+            </div>
+            
+            <div class="col-sm-6">
                 <h2>フォロワー</h2>
                 <p>
                 <% if @user.follower_users.any? %>
-                 <% @user.follower_users.each do |user| %>
-                 <%= link_to gravatar_for(user,size:50),user %>
-                 <%= user.name %>
-                 <% end %>
+                <% @user.follower_users.each do |user| %>
+                <%= link_to gravatar_for(user,size:50),user %>
+                <%= user.name %>
+                <% end %>
                 <% end %>
                 </p>
+            </div>
+        </div>
     </div>
 </div>          
