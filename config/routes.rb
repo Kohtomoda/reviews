@@ -13,7 +13,13 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :movies
+  resources :movies do
+    resources :comments, :only => [:create, :destroy] do
+      resources :users, :only => [:create, :destroy] do
+      end
+    end
+  end
+  
   
   resources :reviews
   

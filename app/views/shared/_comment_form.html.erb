@@ -1,0 +1,38 @@
+<h2>この作品へのコメント</h2>
+
+    <% @comments.each do |comment| %>
+    <div class="comment-box">
+    <div class="user-thumbnail"></div>
+    
+    <div class="comment">
+    <p>名前：<%= link_to comment.user.name, comment.user %>　投稿日：<%= comment.updated_at %>
+    <% if logged_in? && comment.user == current_user %>
+    <%= link_to "このコメントを削除する", [@movie,comment],  method: :delete, data:{ confirm: "削除しますよ" } %>
+    <% end %></p>
+    <p><%= comment.body %></p>
+    </div>
+    <div class="c-both"></div>
+    </div>
+    
+    <% end %>
+
+    <% if logged_in? %>
+    <h2>コメントを書く</h2>
+        
+    <%= form_for [@movie,@comment] do |f| %>
+      
+          <%= f.hidden_field :user_id %>
+          <%= f.hidden_field :movie_id %>
+        
+        <div class="field">
+          <%= f.text_area :body %>
+        </div>
+        
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      
+      <% end %>
+    <% end %>
+    
+      

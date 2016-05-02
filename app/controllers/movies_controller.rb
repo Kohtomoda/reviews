@@ -2,12 +2,15 @@ class MoviesController < ApplicationController
     before_action :logged_in_user, only: [:create, :destroy]
     before_action :set_movie, only: [:destroy] 
     
+    
     def new
         @movie = Movie.new
     end
     
     def show
-        @movie = Movie.find(params[:id])
+        @movie = Movie.includes(:user).find(params[:id])
+        @comments = @movie.comments.includes(:user).all
+        @comment  = @movie.comments.build(user_id: current_user.id) if current_user
     end
     
     def create
